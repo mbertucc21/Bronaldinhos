@@ -1,0 +1,47 @@
+/* The side navigation menu */
+.menuOpened {
+  /* height: 100%; */
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: rgb(225,225,225);
+  overflow-x: hidden;
+  padding-top: 20px;
+  transition: 0.5s;
+  text-align: left;
+  border-right: solid 1px rgb(100, 100, 100);
+}
+
+/* The navigation menu links */
+.menuOpened p {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 24px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+  margin-right: 200px;
+}
+
+.menuOpened p:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.menuClosed {
+  /* height: 100%; */
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.closebtn{
+  height: 50px;
+  margin-bottom: 10px;
+}

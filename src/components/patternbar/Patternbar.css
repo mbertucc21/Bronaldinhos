@@ -1,0 +1,5 @@
+.patternBar {
+  background: url("./pattern.png");
+  background-size: 300px;
+  height: 16px;
+}

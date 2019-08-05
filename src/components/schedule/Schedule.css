@@ -1,0 +1,34 @@
+.scheduleScreen{
+  position: fixed;
+  left: 250px;
+  right: 0px;
+  margin: 40px auto;
+}
+
+.scheduleTable{
+  background: rgba(60, 60, 170, 0.7);
+  width: 90%;
+  border: solid rgb(40, 40, 60);
+  position: relative;
+  margin: 0 auto;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  padding: 8px;
+  text-align: center;
+}
+
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
