@@ -2,4 +2,5 @@
   background: url("./pattern.png");
   background-size: 300px;
   height: 16px;
+  border-bottom: white 1px solid;
 }

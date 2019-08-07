@@ -47,7 +47,6 @@ nav {
 h2{
   margin: 0 auto;
   font-weight: normal;
-  color: white;
   font-size: 36px;
   font-family: 'Century Gothic', sans-serif;
   letter-spacing: 8px;
@@ -58,9 +57,28 @@ h2{
   margin-right: 10px;
 }
 
-p{
+.signInBox p{
   margin: 0 auto;
-  color: white;
   font-family: 'Century Gothic', sans-serif;
   text-decoration: none;
+}
+
+img {
+  height: 30px;
+  width: 30px;
+}
+
+@media only screen and (max-width: 675px) {
+  h2 {
+    font-size: 32px;
+  }
+
+  img {
+    height: 26px;
+    width: 26px;
+  }
+
+  .signInBox p{
+    display: none;
+  }
 }

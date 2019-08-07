@@ -1,0 +1,15 @@
+.about{
+  position: absolute;
+  margin: 0 auto;
+  padding: 20px 40px 40px 40px;
+  left: 250px;
+  right: 0px;
+}
+
+.about-container{
+  background: rgba(100, 170, 100, 0.8);
+  font-family: 'Century Gothic', sans-serif;
+  border: 1px solid white;
+  color: white;
+  text-align: left;
+}

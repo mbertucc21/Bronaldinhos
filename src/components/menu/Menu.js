@@ -1,16 +1,16 @@
 import React from 'react';
 import './Menu.css';
 
-const Menu = ({onMenuClick, menuClicked, onScheduleClick}) => {
+const Menu = ({menuClicked, onMenuClick, updateMenuRoute}) => {
   if (menuClicked){
     return(
       <div className="menuOpened">
-        <p className="closebtn" onClick={() => onMenuClick()}>&times;</p>
-        <p>Home</p>
-        <p onClick={() => onScheduleClick()}>Schedule</p>
-        <p>Stats</p>
-        <p>Photos</p>
-        <p>Chat</p>
+        <h5 className="closebtn" onClick={() => onMenuClick()}>&times;</h5>
+        <p onClick={() => updateMenuRoute("about")}>About</p>
+        <p onClick={() => updateMenuRoute("schedule")}>Schedule</p>
+        <p onClick={() => updateMenuRoute("stats")}>Stats</p>
+        <p onClick={() => updateMenuRoute("photos")}>Photos</p>
+        <p onClick={() => updateMenuRoute("chat")}>Chat</p>
       </div>
     );
   } else {

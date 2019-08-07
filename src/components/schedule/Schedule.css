@@ -1,16 +1,57 @@
-.scheduleScreen{
-  position: fixed;
+.schedule{
+  position: absolute;
+  margin: 0 auto;
+  padding: 20px 40px 40px 40px;
   left: 250px;
   right: 0px;
-  margin: 40px auto;
+}
+
+.table-title h3{
+  text-align: left;
+  margin: 10px auto;
+  color: white;
+  letter-spacing: 2px;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: normal;
 }
 
 .scheduleTable{
-  background: rgba(60, 60, 170, 0.7);
-  width: 90%;
-  border: solid rgb(40, 40, 60);
-  position: relative;
-  margin: 0 auto;
+  background: rgba(30, 30, 30, 0.8);
+  font-family: 'Century Gothic', sans-serif;
+  border: 1px solid white;
+  color: white;
+}
+
+.maps-record{
+  display: flex;
+  align-items: center;
+  background: rgba(100, 170, 100, 0.8);
+  justify-content: space-between;
+}
+
+.maps{
+  display: flex;
+  align-items: center;
+}
+
+.maps p{
+  margin: 4px;
+  color: white;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.record{
+  background: rgba(100, 200, 100, 0.8);
+  padding: 4px;
+}
+
+.record h5 {
+  margin: 4px;
+  color: white;
+  margin-right: 10px;
+  font-weight: normal;
+  font-size: 16px;
 }
 
 table {
@@ -19,9 +60,19 @@ table {
   width: 100%;
 }
 
+.tr-head{
+  background: rgba(20, 20, 20, 0.8);
+}
+
 th {
   padding: 8px;
-  text-align: center;
+  text-align: left;
+}
+
+.tr-body{
+  background: rgba(40, 40, 40, 0.7);
+  border-top: 1px white solid;
+  border-bottom: 1px white solid;
 }
 
 td {
@@ -29,6 +80,6 @@ td {
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+.tr-body:hover{
+  background: rgba(180, 60, 60, 0.8);
 }

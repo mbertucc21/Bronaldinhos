@@ -3,7 +3,7 @@ import './Navbar.css';
 import profilePic from './user.png';
 import menu from './menu.png';
 
-const SignIn = ({onMenuClick}) => {
+const Navbar = ({onMenuClick, onSigninClick}) => {
   return (
     <nav>
       <div className='menuFlex'>
@@ -11,7 +11,6 @@ const SignIn = ({onMenuClick}) => {
           <img
             className='link dim black underline pointer'
             src={menu} alt='menu'
-            style={{height: 30}}
             onClick={() => onMenuClick()}
           />
         </div>
@@ -23,12 +22,19 @@ const SignIn = ({onMenuClick}) => {
       </div>
       <div className='signInFlex'>
         <div className='signInBox'>
-          <img className='profilePhoto link dim black underline pointer' src={profilePic} alt='profilePic' style={{height: 30}} />
-          <p className='link dim underline pointer'>Sign In</p>
+          <img
+            className='profilePhoto link dim black underline pointer'
+            src={profilePic} alt='profilePic'
+            onClick={() => onSigninClick()}
+          />
+          <p
+            className='link dim underline pointer'
+            onClick={() => onSigninClick()}
+          >Sign In</p>
         </div>
       </div>
     </nav>
   );
 }
 
-export default SignIn
+export default Navbar
