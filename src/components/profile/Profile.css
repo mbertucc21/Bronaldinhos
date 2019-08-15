@@ -1,0 +1,45 @@
+.profile{
+  position: absolute;
+  margin: 0 auto;
+  padding: 20px 40px 40px 40px;
+  left: 250px;
+  right: 0px;
+}
+
+.profile-container{
+  background: rgba(100, 170, 100, 0.8);
+  font-family: 'Century Gothic', sans-serif;
+  border: 1px solid white;
+  color: white;
+  text-align: left;
+}
+
+.hidden{
+  display: none;
+}
+
+.selectFile{
+  padding: 4px;
+  border: solid white 1px;
+  border-radius: 8px;
+  background-color: grey;
+}
+
+.selectFile:hover {
+  cursor: pointer;
+  background-color: red;
+}
+
+.emptyUploadImg {
+  margin: 20px;
+  height: 150px;
+  width: 150px;
+}
+
+.uploadImg{
+  margin: 20px;
+  height: 150px;
+  width: 150px;
+  border: white solid;
+  border-radius: 50%;
+}

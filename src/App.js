@@ -3,6 +3,8 @@ import { CSSTransitionGroup } from 'react-transition-group';
 import './App.css';
 import Navbar from './components/navbar/Navbar';
 import Signin from './components/signin/Signin';
+import Register from './components/register/Register';
+import Profile from './components/profile/Profile';
 // import Patternbar from './components/patternbar/Patternbar';
 import Menu from './components/menu/Menu';
 import About from './components/about/About';
@@ -18,12 +20,38 @@ class App extends Component {
     super();
     this.state = {
       menuClicked: false,
-      signinClicked: false,
-      menuRoute: 'home'
+      menuRoute: 'home',
+      profileRoute: 'home',
+      signedIn: false,
+      user: {
+        id: '',
+        name: '',
+        email: '',
+        joined: new Date()
+      }
     }
+    // console.log("---constructor---")
+  }
+
+  // ComponentDidMount (Fetching from BackEnd Database)
+  componentDidMount() {
+    console.log("---componentDidMount---")
+    fetch('http://localhost:3000/')
+      .then(response => response.json())
+      .then(console.log)
   }
 
   // FUNCTIONS
+  loadUser = (data) => {
+    this.setState({user: {
+      id: data.id,
+      name: data.name,
+      email: data.email,
+      joined: data.joined
+      }
+    })
+  }
+
   onMenuClick = () => {
     if (!this.state.menuClicked){
       this.setState({menuClicked: true});
@@ -33,19 +61,28 @@ class App extends Component {
     }
   }
 
-  onSigninClick = () => {
-    if (!this.state.signinClicked){
-      this.setState({signinClicked: true});
-    } else {
-      this.setState({signinClicked: false});
-    }
+  onSignedIn = () => {
+    this.setState({signedIn: true});
+  }
+
+  updateProfileRoute = (profileRoute) => {
+    this.setState({menuRoute: "home"});
+    this.setState({profileRoute: profileRoute});
+  }
+
+  renderProfileComponents = (profileRoute) => {
+    // console.log("profileRoute: ", profileRoute)
+    if (profileRoute === "signin") return (<Signin updateProfileRoute={this.updateProfileRoute} updateMenuRoute={this.updateMenuRoute} loadUser={this.loadUser} onSignedIn={this.onSignedIn}/>);
+    if (profileRoute === "register") return (<Register updateProfileRoute={this.updateProfileRoute} updateMenuRoute={this.updateMenuRoute} loadUser={this.loadUser} onSignedIn={this.onSignedIn}/>);
   }
 
   updateMenuRoute = (menuRoute) => {
+    this.setState({profileRoute: "home"});
     this.setState({menuRoute: menuRoute});
   }
 
-  renderComponents = (menuRoute) => {
+  renderMenuComponents = (menuRoute) => {
+    if (menuRoute === "profile") return (<Profile user={this.state.user} />);
     if (menuRoute === "about") return (<About />);
     if (menuRoute === "schedule") return (<Schedule />);
     if (menuRoute === "stats") return (<Stats />);
@@ -60,31 +97,35 @@ class App extends Component {
 
   // RENDER
   render() {
-
+    // console.log("---render---")
     return (
       <div className="App">
-        {console.log("Width: ", window.innerWidth)}
-        {console.log("Height: ", window.innerHeight)}
+
+        {/* onsole.log("Width: ", window.innerWidth) */}
+        {/* console.log("Height: ", window.innerHeight) */}
+
         <Navbar
+          updateProfileRoute={this.updateProfileRoute}
           onMenuClick={this.onMenuClick}
-          onSigninClick={this.onSigninClick}
+          signedIn={this.state.signedIn}
         />
-        <Signin
-          signinClicked={this.state.signinClicked}
-        />
+
+        {this.renderProfileComponents(this.state.profileRoute)}
+
         <Menu
           menuClicked={this.state.menuClicked}
           onMenuClick={this.onMenuClick}
           updateMenuRoute={this.updateMenuRoute}
         />
-        {console.log(this.state.CSSTransition)}
+
         <CSSTransitionGroup
           transitionName='fade'
           transitionEnterTimeout={400}
           transitionLeaveTimeout={400}
           >
-          {this.renderComponents(this.state.menuRoute)}
+          {this.renderMenuComponents(this.state.menuRoute)}
         </CSSTransitionGroup>
+
       </div>
     );
   }

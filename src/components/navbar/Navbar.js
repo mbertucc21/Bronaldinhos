@@ -3,7 +3,7 @@ import './Navbar.css';
 import profilePic from './user.png';
 import menu from './menu.png';
 
-const Navbar = ({onMenuClick, onSigninClick}) => {
+const Navbar = ({onMenuClick, updateProfileRoute, signedIn}) => {
   return (
     <nav>
       <div className='menuFlex'>
@@ -25,12 +25,15 @@ const Navbar = ({onMenuClick, onSigninClick}) => {
           <img
             className='profilePhoto link dim black underline pointer'
             src={profilePic} alt='profilePic'
-            onClick={() => onSigninClick()}
+            onClick={() => updateProfileRoute('signin')}
           />
-          <p
-            className='link dim underline pointer'
-            onClick={() => onSigninClick()}
-          >Sign In</p>
+          { signedIn
+            ? <p>IN</p>
+            : <p
+              className='link dim underline pointer'
+              onClick={() => updateProfileRoute('signin')}
+              >Sign In</p>
+          }
         </div>
       </div>
     </nav>

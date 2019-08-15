@@ -15,17 +15,17 @@ const Schedule = () => {
           <div className='maps'>
             <p> West Oak Trails: </p>
             <a target="_blank" rel="noopener noreferrer" href="https://maps.google.com/?q=West Oak Trails Soccer Fields, Upper Middle Rd, Oakville, ON">
-            <img className='link dim black underline pointer' src={pin} alt='pin' style={{height: 20}}/>
+            <img className='link dim black underline pointer' src={pin} alt='pin' style={{height: 20, width: 20}}/>
             </a>
             <p> || </p>
             <p> Bronte Turf: </p>
             <a target="_blank" rel="noopener noreferrer" href="https://maps.google.com/?q=2197 Lakeshore Rd W, Oakville, ON L6L 1H1">
-            <img className='link dim black underline pointer' src={pin} alt='pin' style={{height: 20}}/>
+            <img className='link dim black underline pointer' src={pin} alt='pin' style={{height: 20, width: 20}}/>
             </a>
             <p> || </p>
             <p> River Oaks Turf: </p>
             <a target="_blank" rel="noopener noreferrer" href="https://maps.google.com/?q=River Oaks Soccer (Turf Field), Oakville, ON">
-            <img className='link dim black underline pointer' src={pin} alt='pin' style={{height: 20}}/>
+            <img className='link dim black underline pointer' src={pin} alt='pin' style={{height: 20, width: 20}}/>
             </a>
           </div>
           <div className='record'>
