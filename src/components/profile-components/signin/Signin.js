@@ -37,7 +37,7 @@ class Signin extends Component {
           console.log('*Sign In Success');
           this.props.loadUser(user);
           this.props.onSignedIn();
-          this.props.updateMenuRoute("profile");
+          this.props.updateProfileRoute("profile");
         }
       })
   }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Profile.css';
-import Patternbar from '../patternbar/Patternbar';
+import Patternbar from '../../patternbar/Patternbar';
 import profilePic from './user.png';
 
 class Profile extends Component {
@@ -28,15 +28,15 @@ class Profile extends Component {
           <div>
           </div>
           <p>Here is your profile information...</p>
-          <p>Hello {`${this.props.user.name}`}, welcome to your dashboard</p>
+          <p>Hello {`${this.props.currentUser.name}`}, welcome to your dashboard</p>
           <p>Please select a profile image: </p>
           { !this.state.image
             ? <img className="emptyUploadImg" src={profilePic} alt='profilePic' />
             : <img className="uploadImg" src={this.state.image} alt="profileImg" />
           }
           <br/>
-          <input id="files" class="hidden" type="file" onChange={this.onImageChange} />
-          <label className="selectFile" for="files">Select file</label>
+          <input id="files" className="hidden" type="file" onChange={this.onImageChange} />
+          <label className="selectFile" htmlFor="files">Select file</label>
           <p></p>
         </div>
       </div>

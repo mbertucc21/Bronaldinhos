@@ -1,6 +1,6 @@
 import React from 'react';
 import './Schedule.css';
-import Patternbar from '../patternbar/Patternbar';
+import Patternbar from '../../patternbar/Patternbar';
 import pin from './placeholder.png';
 
 const Schedule = () => {

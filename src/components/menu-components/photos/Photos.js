@@ -3,7 +3,7 @@ import React from 'react';
 const Photos = () => {
   return(
     <div className='photos'>
-        <p>Here are some photos... </p>
+        <p>Photos component under development...</p>
     </div>
   );
 }

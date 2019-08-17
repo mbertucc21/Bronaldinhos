@@ -42,7 +42,7 @@ class Register extends Component {
           // console.log('### USER ###');
           // console.log(user);
           this.props.loadUser(user)
-          this.props.updateMenuRoute("profile");
+          this.props.updateProfileRoute("profile");
         }
       })
   }

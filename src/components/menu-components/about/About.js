@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import Patternbar from '../patternbar/Patternbar';
+import Patternbar from '../../patternbar/Patternbar';
 
 const About = () => {
   return(
