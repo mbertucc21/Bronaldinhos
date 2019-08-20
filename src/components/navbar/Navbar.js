@@ -1,9 +1,9 @@
 import React from 'react';
 import './Navbar.css';
-import profilePic from './user.png';
+import user from './user.png';
 import menu from './menu.png';
 
-const Navbar = ({onMenuClick, onProfileClick, signedIn}) => {
+const Navbar = ({onMenuClick, onProfileClick, profilePhoto, signedIn}) => {
   return (
     <nav>
       <div className='menuFlex'>
@@ -22,17 +22,23 @@ const Navbar = ({onMenuClick, onProfileClick, signedIn}) => {
       </div>
       <div className='signInFlex'>
         <div className='signInBox'>
-          <img
-            className='profilePhoto link dim black underline pointer'
-            src={profilePic} alt='profilePic'
-            onClick={() => onProfileClick()}
-          />
+          { (!profilePhoto)
+            ? <img
+                className='profilePhoto link dim black underline pointer'
+                src={user} alt='profile'
+                onClick={() => onProfileClick()}
+              />
+            : <img
+                className='profilePhoto new-profile-photo link dim black underline pointer'
+                src={profilePhoto} alt='profile'
+                onClick={() => onProfileClick()}
+              />
+          }
           { signedIn
-            ? <p>IN</p>
+            ? <p></p>
             : <p
               className='link dim underline pointer'
-              onClick={() => onProfileClick()}
-              >Sign In</p>
+              onClick={() => onProfileClick()}>Sign In</p>
           }
         </div>
       </div>

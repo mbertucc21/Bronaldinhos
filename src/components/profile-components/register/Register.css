@@ -1,12 +1,15 @@
 .registerOpened{
-  background: rgba(50, 150, 50, 0.8);
-  margin: 100px auto;
+  border-radius: 10px;
+  background: rgba(220, 220, 240, 0.8);
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
   width: 400px;
-  border: solid white 2px;
-  color: white;
+  border: solid rgb(80, 80, 100) 2px;
+  color: black;
   font-family: 'Century Gothic', sans-serif;
   padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   transition: 0.5s;
 }
 
@@ -15,30 +18,73 @@
   font-size: 24px;
 }
 
+.registerOpened .error-msg{
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 12px;
+  text-align: left;
+  margin-left: 20px;
+  color: rgb(200, 0, 0);
+}
+
 .registerOpened label{
+  margin-left: 20px;
   font-weight: normal;
   font-size: 16px;
+  text-align: left;
 }
 
 .registerOpened input{
+  background: none;
+  color: black;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 3px;
   font-size: 16px;
   font-family: arial, sans-serif;
-  border: 2px #707070 solid;
+  border: none;
+  border-bottom: 2px rgb(80, 80, 100) solid;
   margin-bottom: 16px;
-  width: 200px;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  width: 90%;
+  outline: none;
 }
 
-.registerOpened button{
-  background: rgba(40, 90, 40, 0.9);
-  font-size: 16px;
+.registerOpened input:focus{
+  border-bottom: 2px rgb(120, 120, 180) solid;
+}
+
+.registerOpened .register{
   color: white;
-  border: white 2px solid;
+  background: rgb(45, 95, 225);
+  font-size: 16px;
+  /* border: black 1px solid; */
+  border: none;
   border-radius: 6px;
+  width: 100px;
   padding: 8px;
+  margin: 0px 10px;
   margin-top: 10px;
 }
 
-.registerOpened button:hover{
+.registerOpened .register:hover{
   cursor: pointer;
-  background: rgba(20, 60, 20, 0.9);
+  background: rgb(0, 0, 205);
+}
+
+.registerOpened .signin{
+  color: rgb(0, 0, 200);
+  background: none;
+  font-size: 14px;
+  /* border: black 1px solid; */
+  border: none;
+  border-radius: 6px;
+  padding: 6px;
+  margin: 0px 10px;
+  margin-top: 2px;
+}
+
+.registerOpened .signin:hover{
+  cursor: pointer;
+  color: rgb(0, 0, 100);
 }

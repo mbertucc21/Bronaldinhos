@@ -1,17 +1,20 @@
 .profile{
-  position: absolute;
   margin: 0 auto;
-  padding: 20px 40px 40px 40px;
-  left: 250px;
-  right: 0px;
 }
 
 .profile-container{
-  background: rgba(100, 170, 100, 0.8);
+  border-radius: 10px;
+  background: rgba(220, 220, 240, 0.8);
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  border: solid rgb(80, 80, 100) 2px;
+  color: black;
   font-family: 'Century Gothic', sans-serif;
-  border: 1px solid white;
-  color: white;
-  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  transition: 0.5s;
 }
 
 .hidden{
@@ -19,18 +22,27 @@
 }
 
 .selectFile{
-  padding: 4px;
-  border: solid white 1px;
-  border-radius: 8px;
-  background-color: grey;
+  color: white;
+  background: rgb(45, 95, 225);
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  width: 100px;
+  padding: 8px;
+  margin: 0px 10px;
+  margin-top: 10px;
 }
 
 .selectFile:hover {
   cursor: pointer;
-  background-color: red;
+  background: rgb(0, 0, 205);
 }
 
 .emptyUploadImg {
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: rgb(50,50,50) solid;
+  background-color: rgb(150,150,150);
   margin: 20px;
   height: 150px;
   width: 150px;
@@ -38,6 +50,7 @@
 
 .uploadImg{
   margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   height: 150px;
   width: 150px;
   border: white solid;

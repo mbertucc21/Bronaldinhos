@@ -1,22 +1,22 @@
 import React, {Component} from 'react';
 import './Profile.css';
-import Patternbar from '../../patternbar/Patternbar';
-import profilePic from './user.png';
+import user from './user.png';
 
+// Leave as class component for now.
+// Will want to update profilePhoto state in backend
 class Profile extends Component {
   constructor(props){
     super(props);
     this.state = {
-      image: null
+      profilePhoto: '',
     }
   }
 
   onImageChange = (event) => {
-    console.log(event.target.files[0].type);
+    // console.log(event.target.files[0].type);
     if (event.target.files && event.target.files[0]) {
-      this.setState({
-        image: URL.createObjectURL(event.target.files[0])
-      });
+      let image = URL.createObjectURL(event.target.files[0])
+      this.props.newProfilePhoto(image);
     }
   }
 
@@ -24,15 +24,12 @@ class Profile extends Component {
     return(
       <div className='profile'>
         <div className='profile-container'>
-          <Patternbar />
-          <div>
-          </div>
-          <p>Here is your profile information...</p>
+          <h3>Profile</h3>
           <p>Hello {`${this.props.currentUser.name}`}, welcome to your dashboard</p>
-          <p>Please select a profile image: </p>
-          { !this.state.image
-            ? <img className="emptyUploadImg" src={profilePic} alt='profilePic' />
-            : <img className="uploadImg" src={this.state.image} alt="profileImg" />
+          <p>Change your profile photo: </p>
+          { !this.props.profilePhoto
+            ? <img className="emptyUploadImg" src={user} alt="profile" />
+            : <img className="uploadImg" src={this.props.profilePhoto} alt="profile" />
           }
           <br/>
           <input id="files" className="hidden" type="file" onChange={this.onImageChange} />

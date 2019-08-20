@@ -6,7 +6,8 @@ class Signin extends Component {
     super(props);
     this.state = {
       signInEmail: '',
-      signInPassword: ''
+      signInPassword: '',
+      signInError: false
     }
   }
 
@@ -16,6 +17,14 @@ class Signin extends Component {
 
   onPasswordChange = (event) => {
     this.setState({signInPassword: event.target.value})
+  }
+
+  updateSigninError = (boolean) => {
+    this.setState({signInError: boolean})
+  };
+
+  renderSigninError = (error) => {
+    if (this.state.signInError) return (<p className="error-msg">Error: Invalid email or password</p>)
   }
 
   onSubmitSignIn = (e) => {
@@ -31,13 +40,16 @@ class Signin extends Component {
     })
       .then(response => response.json())
       .then(user => {
-        console.log("User:", user)
-        // if (data === 'success') {
-        if (user) {
-          console.log('*Sign In Success');
+        // console.log("User:", user)
+        if (user !== "INVALID SIGNIN") {
+          // console.log('*Sign In Success');
+          // this.updateSigninError(false);
           this.props.loadUser(user);
           this.props.onSignedIn();
           this.props.updateProfileRoute("profile");
+        } else {
+          // alert("sign in error: invalid username or password")
+          this.updateSigninError(true);
         }
       })
   }
@@ -47,20 +59,23 @@ class Signin extends Component {
     return (
     <div className="signinOpened">
       <h3>Sign In</h3>
+      {this.renderSigninError(this.state.error)}
       <form method="POST" className="measure center">
-        <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
+        <label className="db fw6 lh-copy f6" htmlFor="email-address">Email:</label>
         <input
           onChange={this.onEmailChange}
           type="email" name="email-address" id="email-address" required />
-        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
+        <label className="db fw6 lh-copy f6" htmlFor="password">Password:</label>
         <input
           onChange={this.onPasswordChange}
           type="password" name="password" id="password" required />
         <br/>
         <button
+          className="signin"
           onClick={this.onSubmitSignIn}>Sign In</button>
         <br/>
         <button
+          className="register"
           onClick={() => updateProfileRoute("register")}>Register</button>
       </form>
     </div>

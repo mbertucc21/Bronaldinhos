@@ -25,6 +25,7 @@ class App extends Component {
       profileClicked: false,
       profileRoute: '',
       signedIn: false,
+      profilePhoto: null,
       currentUser: {
         id: '',
         name: '',
@@ -62,15 +63,22 @@ class App extends Component {
   // PROFILE COMPONENT FUNCTIONS
   ///////////////////////////////
   onProfileClick = () => {
-    if (!this.state.profileClicked){
+    // If signed in {show profile component} else {show signin/register component}
+    if (this.state.signedIn) {
       this.setState({profileClicked: true});
       this.setState({menuRoute: ''});
       this.setState({menuClicked: false});
-      // If not signed in, updateProfileRoute to "signin" else gp tp "profile"
-      this.updateProfileRoute("signin");
+      this.updateProfileRoute("profile");
     } else {
-      this.setState({profileClicked: false});
-      this.setState({profileRoute: ''});
+      if (!this.state.profileClicked){
+        this.setState({profileClicked: true});
+        this.setState({menuRoute: ''});
+        this.setState({menuClicked: false});
+        this.updateProfileRoute("signin");
+      } else {
+        this.setState({profileClicked: false});
+        this.setState({profileRoute: ''});
+      }
     }
   }
 
@@ -89,6 +97,9 @@ class App extends Component {
 
   // Used in Signin and Register components
   onSignedIn = () => { this.setState({signedIn: true}) };
+
+  // Used in Profile component
+  newProfilePhoto = (image) => this.setState({profilePhoto: image});
 
   renderProfileComponents = (profileRoute) => {
     if (profileRoute === "signin") {
@@ -109,7 +120,7 @@ class App extends Component {
         />
       );
     }
-    if (profileRoute === "profile") return (<Profile currentUser={this.state.currentUser} />);
+    if (profileRoute === "profile") return (<Profile currentUser={this.state.currentUser} profilePhoto={this.state.profilePhoto} newProfilePhoto={this.newProfilePhoto} />);
   }
 
   ////////////////////
@@ -118,8 +129,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-        {/* onsole.log("Width: ", window.innerWidth) */}
+        {/* console.log("Width: ", window.innerWidth) */}
         {/* console.log("Height: ", window.innerHeight) */}
         {/* console.log("Menu Route: ", this.state.menuRoute) */}
         {/* console.log("Profile Route: ", this.state.profileRoute) */}
@@ -127,6 +137,7 @@ class App extends Component {
         <Navbar
           onMenuClick={this.onMenuClick}
           onProfileClick={this.onProfileClick}
+          profilePhoto={this.state.profilePhoto}
           signedIn={this.state.signedIn}
         />
 
