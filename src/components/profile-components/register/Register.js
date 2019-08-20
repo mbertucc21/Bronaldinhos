@@ -77,9 +77,9 @@ class Register extends Component {
       .then(user => {
         if (user !== 'INVALID REGISTER') {
           // console.log('*Register Success');
-          console.log(user);
+          // console.log(user);
           this.props.loadUser(user)
-          this.props.updateProfileRoute("profile");
+          this.props.onSignInOut('signIn');
         } else {
           // alert("register error: email already registered")
           this.updateRegisterError("error03");

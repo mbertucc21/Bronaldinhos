@@ -1,8 +1,10 @@
 .profile{
+  text-align: center;
   margin: 0 auto;
 }
 
 .profile-container{
+  text-align: center;
   border-radius: 10px;
   background: rgba(220, 220, 240, 0.8);
   margin-top: 50px;
@@ -12,30 +14,13 @@
   border: solid rgb(80, 80, 100) 2px;
   color: black;
   font-family: 'Century Gothic', sans-serif;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 10px;
   transition: 0.5s;
 }
 
 .hidden{
   display: none;
-}
-
-.selectFile{
-  color: white;
-  background: rgb(45, 95, 225);
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  width: 100px;
-  padding: 8px;
-  margin: 0px 10px;
-  margin-top: 10px;
-}
-
-.selectFile:hover {
-  cursor: pointer;
-  background: rgb(0, 0, 205);
 }
 
 .emptyUploadImg {
@@ -55,4 +40,41 @@
   width: 150px;
   border: white solid;
   border-radius: 50%;
+}
+
+img:hover{
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.selectFile{
+  position: center;
+  color: white;
+  background: rgb(45, 95, 225);
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  width: 100px;
+  padding: 8px;
+  margin: 0px 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.selectFile:hover {
+  cursor: pointer;
+  background: rgb(0, 0, 205);
+}
+
+.signout {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color: red;
+  font-size: 12px;
+}
+
+.signout:hover{
+  cursor: pointer;
+  color: rgb(200, 0, 0);
 }

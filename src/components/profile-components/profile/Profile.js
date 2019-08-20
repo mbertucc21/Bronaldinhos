@@ -27,14 +27,19 @@ class Profile extends Component {
           <h3>Profile</h3>
           <p>Hello {`${this.props.currentUser.name}`}, welcome to your dashboard</p>
           <p>Change your profile photo: </p>
+          <input id="files" className="hidden" type="file" onChange={this.onImageChange} />
           { !this.props.profilePhoto
-            ? <img className="emptyUploadImg" src={user} alt="profile" />
-            : <img className="uploadImg" src={this.props.profilePhoto} alt="profile" />
+            ? <label htmlFor="files"><img className="emptyUploadImg" src={user} alt="profile" /></label>
+            : <label htmlFor="files"><img className="uploadImg" src={this.props.profilePhoto} alt="profile" /></label>
           }
           <br/>
           <input id="files" className="hidden" type="file" onChange={this.onImageChange} />
           <label className="selectFile" htmlFor="files">Select file</label>
-          <p></p>
+          <br />
+          <p
+            className="signout"
+            onClick={() => this.props.onSignInOut('signOut')}
+            >Sign Out</p>
         </div>
       </div>
     );

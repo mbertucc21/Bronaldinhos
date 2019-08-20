@@ -45,8 +45,7 @@ class Signin extends Component {
           // console.log('*Sign In Success');
           // this.updateSigninError(false);
           this.props.loadUser(user);
-          this.props.onSignedIn();
-          this.props.updateProfileRoute("profile");
+          this.props.onSignInOut('signIn');
         } else {
           // alert("sign in error: invalid username or password")
           this.updateSigninError(true);

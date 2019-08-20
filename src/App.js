@@ -95,8 +95,19 @@ class App extends Component {
     })
   }
 
-  // Used in Signin and Register components
-  onSignedIn = () => { this.setState({signedIn: true}) };
+  // Used in Signin, Register and Profile components
+  onSignInOut = (inOut) => {
+    if (inOut === 'signIn') {
+      this.setState({signedIn: true});
+      // this.newProfilePhoto('database-image');  --> need to save files in database and will load here
+      this.updateProfileRoute("profile");
+    }
+    if (inOut === 'signOut') {
+      this.setState({signedIn: false})
+      this.newProfilePhoto(null)
+      this.updateProfileRoute("signin");
+    }
+  }
 
   // Used in Profile component
   newProfilePhoto = (image) => this.setState({profilePhoto: image});
@@ -107,7 +118,7 @@ class App extends Component {
         <Signin
           updateProfileRoute={this.updateProfileRoute}
           loadUser={this.loadUser}
-          onSignedIn={this.onSignedIn}
+          onSignInOut={this.onSignInOut}
         />
       );
     }
@@ -116,11 +127,20 @@ class App extends Component {
         <Register
           updateProfileRoute={this.updateProfileRoute}
           loadUser={this.loadUser}
-          onSignedIn={this.onSignedIn}
+          onSignInOut={this.onSignInOut}
         />
       );
     }
-    if (profileRoute === "profile") return (<Profile currentUser={this.state.currentUser} profilePhoto={this.state.profilePhoto} newProfilePhoto={this.newProfilePhoto} />);
+    if (profileRoute === "profile") {
+      return (
+        <Profile
+          currentUser={this.state.currentUser}
+          profilePhoto={this.state.profilePhoto}
+          newProfilePhoto={this.newProfilePhoto}
+          onSignInOut={this.onSignInOut}
+        />
+      );
+    }
   }
 
   ////////////////////
