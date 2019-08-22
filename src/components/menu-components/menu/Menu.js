@@ -2,6 +2,12 @@ import React from 'react';
 import './Menu.css';
 
 const Menu = ({menuClicked, onMenuClick, updateMenuRoute}) => {
+
+  // for inline styles in React, need to set style={object}
+  let componentUnderDevStyle = {
+    color: 'rgb(169,169,169)',
+  };
+
   if (menuClicked){
     return(
       <div className="menuOpened">
@@ -9,8 +15,8 @@ const Menu = ({menuClicked, onMenuClick, updateMenuRoute}) => {
         <p onClick={() => updateMenuRoute("about")}>About</p>
         <p onClick={() => updateMenuRoute("schedule")}>Schedule</p>
         <p onClick={() => updateMenuRoute("stats")}>Stats</p>
-        <p onClick={() => updateMenuRoute("photos")}>Photos</p>
-        <p onClick={() => updateMenuRoute("chat")}>Chat</p>
+        <p style={componentUnderDevStyle} onClick={() => updateMenuRoute("photos")}>Photos</p>
+        <p style={componentUnderDevStyle} onClick={() => updateMenuRoute("chat")}>Chat</p>
       </div>
     );
   } else {

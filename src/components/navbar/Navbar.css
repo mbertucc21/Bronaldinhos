@@ -80,9 +80,19 @@ img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 824px) {
   h2 {
     font-size: 32px;
+    letter-spacing: 6px;
+    padding-left: 70px;
+  }
+}
+
+@media only screen and (max-width: 675px) {
+  h2 {
+    padding-left: 150px;
+    letter-spacing: 6px;
+    font-size: 28px;
   }
 
   img {
@@ -92,5 +102,12 @@ img {
 
   .signInBox p{
     display: none;
+  }
+}
+
+@media only screen and (max-width: 675px) {
+  h2 {
+    font-size: 24px;
+    letter-spacing: 4px;
   }
 }

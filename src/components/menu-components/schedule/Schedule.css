@@ -1,57 +1,50 @@
 .schedule{
   position: absolute;
   margin: 0 auto;
-  padding: 20px 40px 40px 40px;
+  padding: 30px 40px 40px 40px;
   left: 250px;
   right: 0px;
 }
 
-.table-title h3{
+.schedule-title h3{
   text-align: left;
   margin: 10px auto;
+  padding-left: 20px;
   color: white;
   letter-spacing: 2px;
   font-family: 'Century Gothic', sans-serif;
   font-weight: normal;
 }
 
-.scheduleTable{
-  background: rgba(30, 30, 30, 0.8);
+.schedule-container{
+  color: black;
+  background: rgba(220, 220, 240, 0.8);
   font-family: 'Century Gothic', sans-serif;
-  border: 1px solid white;
-  color: white;
+  border: solid rgb(80, 80, 100) 2px;
+  border-radius: 10px;
+  text-align: left;
+  padding: 20px;
+  max-height: 60vh;
+  overflow: auto;
 }
 
-.maps-record{
+.schedule-header{
   display: flex;
-  align-items: center;
-  background: rgba(100, 170, 100, 0.8);
   justify-content: space-between;
 }
 
-.maps{
+.schedule-maps{
+  display: flex;
+}
+
+.map{
   display: flex;
   align-items: center;
+  margin-right: 30px;
 }
 
-.maps p{
-  margin: 4px;
-  color: white;
-  margin-left: 10px;
-  font-size: 16px;
-}
-
-.record{
-  background: rgba(100, 200, 100, 0.8);
-  padding: 4px;
-}
-
-.record h5 {
-  margin: 4px;
-  color: white;
-  margin-right: 10px;
-  font-weight: normal;
-  font-size: 16px;
+.map img{
+  margin-left: 6px;
 }
 
 table {
@@ -61,7 +54,6 @@ table {
 }
 
 .tr-head{
-  background: rgba(20, 20, 20, 0.8);
 }
 
 th {
@@ -70,7 +62,6 @@ th {
 }
 
 .tr-body{
-  background: rgba(40, 40, 40, 0.7);
   border-top: 1px white solid;
   border-bottom: 1px white solid;
 }
@@ -81,5 +72,55 @@ td {
 }
 
 .tr-body:hover{
-  background: rgba(180, 60, 60, 0.8);
+  background: rgba(135, 205, 255, 0.5);
+}
+
+@media only screen and (max-width: 1064px) {
+
+  .map p{
+    font-size: 12px;
+  }
+
+  .record p{
+    font-size: 12px;
+  }
+
+  .schedule-container{
+    max-height: 375px;
+  }
+
+  .maps img{
+    width: 14px;
+    height: 14px;
+  }
+
+  .maps p{
+    font-size: 12px;
+  }
+
+  .record h5{
+    font-size: 12px;
+  }
+
+  .scheduleTable{
+    font-size: 12px;
+  }
+
+  th {
+    font-size: 12px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-height: 400px), screen and (max-width: 850px) {
+  .schedule{
+    left: 200px;
+  }
+
+  .schedule-title h3{
+    font-size: 16px;
+  }
 }

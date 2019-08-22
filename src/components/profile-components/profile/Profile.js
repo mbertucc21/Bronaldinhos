@@ -27,6 +27,11 @@ class Profile extends Component {
           <h3>Profile</h3>
           <p>Hello {`${this.props.currentUser.name}`}, welcome to your dashboard</p>
           <p>Change your profile photo: </p>
+          {this.props.profilePhoto
+           ? <p className='note'><strong>NOTE:</strong> This profile component is still under development.  If you sign out, your profile photo will not be saved.</p>
+           : <p></p>
+          }
+
           <input id="files" className="hidden" type="file" onChange={this.onImageChange} />
           { !this.props.profilePhoto
             ? <label htmlFor="files"><img className="emptyUploadImg" src={user} alt="profile" /></label>
