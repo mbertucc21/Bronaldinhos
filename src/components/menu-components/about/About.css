@@ -61,3 +61,104 @@
     font-size: 14px;
   }
 }
+
+@media only screen and (max-width: 701px) {
+
+  .about{
+    left: 150px;
+  }
+
+  .about-title h3{
+    font-size: 14px;
+  }
+
+  .about-container h3 {
+    font-size: 16px;
+  }
+
+  .about-container p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 581px) {
+
+  .about{
+    left: 125px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .about-title h3{
+    font-size: 12px;
+  }
+
+  .about-container h3 {
+    font-size: 14px;
+  }
+
+  .about-container p {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 501px) {
+
+  .about{
+    left: 100px;
+  }
+
+  .about-container{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .about-title h3{
+    font-size: 10px;
+    padding-left: 10px;
+  }
+
+  .about-container h3 {
+    font-size: 12px;
+  }
+
+  .about-container p {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 401px) {
+
+  .about{
+    left: 80px;
+  }
+
+  .about-container h3 {
+    font-size: 10px;
+  }
+
+  .about-container p {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 326px) {
+
+  .about{
+    left: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .about-title h3{
+    font-size: 10px;
+  }
+
+  .about-container h3 {
+    font-size: 10px;
+  }
+
+  .about-container p {
+    font-size: 8px;
+  }
+}

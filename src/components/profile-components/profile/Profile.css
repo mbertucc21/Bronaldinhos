@@ -86,3 +86,61 @@ img:hover{
   cursor: pointer;
   color: rgb(200, 0, 0);
 }
+
+@media only screen and (max-width: 850px) {
+
+}
+
+@media only screen and (max-width: 701px) {
+
+}
+
+@media only screen and (max-width: 580px) {
+
+}
+
+@media only screen and (max-width: 501px) {
+
+  .profile-container{
+    width: 250px;
+    font-size: 8px;
+  }
+
+  .note{
+    font-size: 6px;
+    margin: 10px 20px 0px 20px;
+  }
+
+  .emptyUploadImg {
+    border-radius: 50%;
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .uploadImg{
+    margin: 20px;
+    height: 75px;
+    width: 75px;
+  }
+
+  .selectFile{
+    font-size: 8px;
+    width: 100px;
+    padding: 4px;
+    margin: 0px 4px;
+  }
+
+  .signout {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: red;
+    font-size: 6px;
+  }
+
+  .signout:hover{
+    cursor: pointer;
+    color: rgb(200, 0, 0);
+  }
+}

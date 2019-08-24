@@ -43,8 +43,10 @@
   margin-right: 30px;
 }
 
-.map img{
-  margin-left: 6px;
+.map-img{
+  margin-left: 4px;
+  width: 20px;
+  height: 20px;
 }
 
 table {
@@ -78,20 +80,21 @@ td {
 @media only screen and (max-width: 1064px) {
 
   .map p{
-    font-size: 12px;
+    font-size: 10px;
+  }
+
+  .map-img{
+    margin-left: 4px;
+    width: 16px;
+    height: 16px;
   }
 
   .record p{
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .schedule-container{
     max-height: 375px;
-  }
-
-  .maps img{
-    width: 14px;
-    height: 14px;
   }
 
   .maps p{
@@ -122,5 +125,174 @@ td {
 
   .schedule-title h3{
     font-size: 16px;
+  }
+
+  .map{
+    margin-right: 20px;
+  }
+
+  .map p{
+    font-size: 8px;
+  }
+
+  .map-img{
+    margin-left: 3px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .record p{
+    font-size: 8px;
+  }
+
+  .maps p{
+    font-size: 10px;
+  }
+
+  .record h5{
+    font-size: 10px;
+  }
+
+  .scheduleTable{
+    font-size: 10px;
+  }
+
+  th {
+    font-size: 10px;
+  }
+
+  td {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 701px) {
+  .schedule{
+    left: 150px;
+  }
+
+  .schedule-title h3{
+    font-size: 14px;
+  }
+
+  .map p{
+    font-size: 8px;
+  }
+
+  .map-img{
+    margin-left: 2px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .record p{
+    font-size: 8px;
+  }
+
+  .maps p{
+    font-size: 8px;
+  }
+
+  .record h5{
+    font-size: 8px;
+  }
+
+  .scheduleTable{
+    font-size: 8px;
+  }
+
+  th {
+    font-size: 8px;
+  }
+
+  td {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 581px) {
+  .schedule{
+    left: 125px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .schedule-title h3{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 501px) {
+  .schedule{
+    left: 100px;
+  }
+
+  .schedule-title h3{
+    font-size: 10px;
+    padding-left: 10px;
+  }
+
+  .schedule-container{
+    padding: 10px;
+  }
+
+  .map{
+    margin-right: 10px;
+  }
+
+  .map p{
+    font-size: 6px;
+  }
+
+  .map-img{
+    margin-left: 2px;
+    width: 8px;
+    height: 8px;
+  }
+
+  .record p{
+    font-size: 6px;
+  }
+
+  .maps p{
+    font-size: 6px;
+  }
+
+  .record h5{
+    font-size: 6px;
+  }
+
+  .scheduleTable{
+    font-size: 6px;
+  }
+
+  th {
+    font-size: 6px;
+  }
+
+  td {
+    font-size: 6px;
+  }
+}
+
+@media screen and (max-width: 401px) {
+  .schedule{
+    left: 80px;
+  }
+  .map-img{
+    margin-left: 0px;
+    width: 8px;
+    height: 8px;
+  }
+  .map{
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 326px) {
+  .schedule{
+    left: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

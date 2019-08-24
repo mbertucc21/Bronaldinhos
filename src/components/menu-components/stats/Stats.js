@@ -4,7 +4,7 @@ import './Stats.css';
 const Stats = () => {
   return(
     <div className='stats'>
-      <div className='table-title'>
+      <div className='stats-title'>
         <h3>2019 Player Stats</h3>
       </div>
       <div className='stats-container'>

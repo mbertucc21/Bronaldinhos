@@ -84,13 +84,16 @@ img {
   h2 {
     font-size: 32px;
     letter-spacing: 6px;
-    padding-left: 70px;
   }
 }
 
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 676px) {
+  .titleBox{
+    margin: 8px auto;
+    padding: 8px;
+  }
+
   h2 {
-    padding-left: 150px;
     letter-spacing: 6px;
     font-size: 28px;
   }
@@ -100,14 +103,67 @@ img {
     width: 26px;
   }
 
+  .profilePhoto{
+    height: 26px;
+    width: 26px;
+  }
+
   .signInBox p{
     display: none;
   }
 }
 
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 501px) {
   h2 {
-    font-size: 24px;
-    letter-spacing: 4px;
+    letter-spacing: 6px;
+    font-size: 20px;
   }
+
+  img {
+    height: 20px;
+    width: 20px;
+  }
+
+  .profilePhoto{
+    height: 20px;
+    width: 20px;
+  }
+
+
+}
+
+@media only screen and (max-width: 401px) {
+  h2 {
+    letter-spacing: 6px;
+    font-size: 16px;
+  }
+
+  img {
+    height: 16px;
+    width: 16px;
+  }
+
+  .profilePhoto{
+    height: 16px;
+    width: 16px;
+  }
+
+}
+
+@media only screen and (max-width: 326px) {
+  h2 {
+    letter-spacing: 6px;
+    font-size: 12px;
+  }
+
+  img {
+    height: 12px;
+    width: 12px;
+  }
+
+  .profilePhoto{
+    height: 12px;
+    width: 12px;
+  }
+
 }

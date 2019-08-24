@@ -88,3 +88,63 @@
   cursor: pointer;
   color: rgb(0, 0, 100);
 }
+
+@media only screen and (max-width: 850px) {
+
+}
+
+@media only screen and (max-width: 701px) {
+
+}
+
+@media only screen and (max-width: 580px) {
+
+}
+
+@media only screen and (max-width: 501px) {
+  .registerOpened{
+    width: 175px;
+  }
+
+  .registerOpened h3{
+    font-weight: normal;
+    font-size: 12px;
+  }
+
+  .registerOpened .error-msg{
+    font-size: 6px;
+    margin-left: 10px;
+  }
+
+  .registerOpened label{
+    margin-left: 10px;
+    font-size: 8px;
+  }
+
+  .registerOpened input{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 2px;
+    font-size: 8px;
+    border-bottom: 1px rgb(80, 80, 100) solid;
+    margin-bottom: 10px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+  }
+
+  .registerOpened input:focus{
+    border-bottom: 1px rgb(120, 120, 180) solid;
+  }
+
+  .registerOpened .register{
+    font-size: 8px;
+    padding: 6px;
+    margin: 0px 10px;
+    margin-top: 10px;
+    width: 60px;
+  }
+
+  .registerOpened .signin{
+    font-size: 8px;
+  }
+}
