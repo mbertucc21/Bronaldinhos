@@ -68,7 +68,7 @@ class Register extends Component {
     // IF VALID USERNAME
     if (this.validateUsername(this.state.username)) validUsername = true;
     else this.updateRegisterError("error01");
-    // IF VALID USERNAME, CHECK IF VALID EMAIL 
+    // IF VALID USERNAME, CHECK IF VALID EMAIL
     if (validUsername) {
       if (this.validateEmail(this.state.email)) validEmail = true;
       else this.updateRegisterError("error02");
@@ -80,7 +80,8 @@ class Register extends Component {
     }
 
     if (validUsername && validEmail && validPassword) {
-      fetch('http://localhost:3000/register', {
+      // fetch('http://localhost:3000/register', {
+      fetch('https://fathomless-brook-19709.herokuapp.com/register', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
