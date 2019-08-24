@@ -149,8 +149,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        { console.log("Width: ", window.innerWidth) }
-        { console.log("Height: ", window.innerHeight) }
+        {/* console.log("Width: ", window.innerWidth) */}
+        {/* console.log("Height: ", window.innerHeight) */}
         {/* console.log("Menu Route: ", this.state.menuRoute) */}
         {/* console.log("Profile Route: ", this.state.profileRoute) */}
 

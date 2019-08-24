@@ -29,9 +29,19 @@ class Register extends Component {
   };
 
   renderRegisterError = (error) => {
-    if (this.state.registerError === 'error01') return (<p className="error-msg">Error: Invalid Email</p>)
-    if (this.state.registerError === 'error02') return (<p className="error-msg">Error: Password must be at least 6 characters long</p>)
-    if (this.state.registerError === 'error03') return (<p className="error-msg">Error: Email already registered</p>)
+    if (this.state.registerError === 'error01') return (<p className="error-msg">Error: Please enter a username</p>)
+    if (this.state.registerError === 'error02') return (<p className="error-msg">Error: Invalid Email</p>)
+    if (this.state.registerError === 'error03') return (<p className="error-msg">Error: Password must be at least 6 characters long</p>)
+    if (this.state.registerError === 'error04') return (<p className="error-msg">Error: Email already registered</p>)
+  }
+
+  // Should do this in backend too
+  validateUsername = (username) => {
+    if (username.length > 0) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   // Should do this in the backend
@@ -52,18 +62,24 @@ class Register extends Component {
   onSubmitRegister = (e) => {
     e.preventDefault()
 
+    let validUsername = false;
     let validEmail = false;
     let validPassword = false;
-    // IF VALID EMAIL (need to also include in backend as JS can be disabled)
-    if (this.validateEmail(this.state.email)) validEmail = true;
+    // IF VALID USERNAME
+    if (this.validateUsername(this.state.username)) validUsername = true;
     else this.updateRegisterError("error01");
-    // IF VALID EMAIL, CHECK IF VALID PASSWORD
-    if (validEmail){
-      if (this.validatePassword(this.state.password)) validPassword = true;
+    // IF VALID USERNAME, CHECK IF VALID EMAIL 
+    if (validUsername) {
+      if (this.validateEmail(this.state.email)) validEmail = true;
       else this.updateRegisterError("error02");
     }
+    // IF VALID USERNAME && EMAIL, CHECK IF VALID PASSWORD
+    if (validUsername && validEmail) {
+      if (this.validatePassword(this.state.password)) validPassword = true;
+      else this.updateRegisterError("error03");
+    }
 
-    if (validEmail && validPassword) {
+    if (validUsername && validEmail && validPassword) {
       fetch('http://localhost:3000/register', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
@@ -82,7 +98,7 @@ class Register extends Component {
           this.props.onSignInOut('signIn');
         } else {
           // alert("register error: email already registered")
-          this.updateRegisterError("error03");
+          this.updateRegisterError("error04");
         }
       })
     }
